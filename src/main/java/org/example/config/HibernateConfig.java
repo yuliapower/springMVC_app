@@ -20,6 +20,7 @@ import java.util.Properties;
 @EnableTransactionManagement
 @PropertySource(value = "classpath:application.properties")
 public class HibernateConfig {
+
     @Value("${datasource.url}")
     private String datasourceUrl;
     
