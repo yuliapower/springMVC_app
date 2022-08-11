@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Transactional
 public class LogServiceImpl implements LogService {
     
     private final LogDAO logDAO;
@@ -22,7 +23,6 @@ public class LogServiceImpl implements LogService {
     }
     
     @Override
-    @Transactional
     public void add(Log log) {
         log.setOffsetDateTime(OffsetDateTime.now());
         if (log.getMessage() == null) log.setMessage("EMPTY log");
@@ -31,7 +31,6 @@ public class LogServiceImpl implements LogService {
     }
     
     @Override
-    @Transactional
     public List<Log> logsByStudent(Long studentId) {
         List<Log> logs = logDAO.findAll();
         List<Log> result = new ArrayList<>();
@@ -44,7 +43,6 @@ public class LogServiceImpl implements LogService {
     }
     
     @Override
-    @Transactional
     public void update(Log log) {
         Log logResult = logDAO.get(log);
         if (logResult != null) {

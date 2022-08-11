@@ -15,6 +15,7 @@ import java.util.List;
 
 
 @Service
+@Transactional
 public class StudentServiceImpl implements StudentService {
 
     private final StudentDAO studentDAO;
@@ -29,7 +30,6 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    @Transactional
     public void save(Student student) {
         studentDAO.save(student);
         Log log = new Log();
@@ -41,7 +41,6 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    @Transactional
     public void deleteById(Long studentId) {
         List<Log> logs = logDAO.findAll();
         for (Log l : logs)
