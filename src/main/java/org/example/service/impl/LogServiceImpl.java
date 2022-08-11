@@ -47,7 +47,7 @@ public class LogServiceImpl implements LogService {
         Log logResult = logDAO.get(log);
         if (logResult != null) {
             if (log.getStudentId() != null) logResult.setStudentId(log.getStudentId());
-            if (log.getOffsetDateTime() != null) logResult.setOffsetDateTime(log.getOffsetDateTime());
+            if (log.getOffsetDateTime() != null) logResult.setOffsetDateTime(OffsetDateTime.now());
             if (log.getMessage() != null) logResult.setMessage(log.getMessage());
             logDAO.add(logResult);
         }

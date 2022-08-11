@@ -2,6 +2,7 @@ package org.example.entity;
 
 
 import lombok.Data;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,7 +18,8 @@ public class Log implements Serializable {
     private Long id;
     
     private Long studentId;
-    
+
+    @UpdateTimestamp
     private OffsetDateTime offsetDateTime;
     
     private String message;

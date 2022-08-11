@@ -33,7 +33,7 @@ public class StudentServiceImpl implements StudentService {
     public void save(Student student) {
         studentDAO.save(student);
         Log log = new Log();
-        List<Log> logs = logDAO.findAll();
+        //  List<Log> logs = logDAO.findAll();
         log.setStudentId(student.getId());
         log.setOffsetDateTime(OffsetDateTime.now());
         log.setMessage("SAVE student with id " + student.getId() + " data/time:" + log.getOffsetDateTime());
