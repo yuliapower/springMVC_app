@@ -3,11 +3,12 @@ POST http://localhost:8089/springMVC_app_war_exploded/logs
 Content-Type: application/json
 
 {
-  "message" : "Empty log"
+  "message" : "Do hm"
 }
 
 ### Get logs by student Id
 GET http://localhost:8089/springMVC_app_war_exploded/logs/1
+
 
 ### Update log by log
 PATCH http://localhost:8089/springMVC_app_war_exploded/logs

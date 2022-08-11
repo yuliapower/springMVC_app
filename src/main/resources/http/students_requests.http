@@ -1,13 +1,14 @@
 ### Create student
-POST http://localhost:8082/log_app_war_exploded/students
+POST http://localhost:8089/springMVC_app_war_exploded/students
 Content-Type: application/json
 
 {
-  "name": "grgtrbfbfgdbgf"
+  "name": "Dan"
 }
 
 ### Delete student by id
-DELETE http://localhost:8082/log_app_war_exploded/students/1
+DELETE http://localhost:8089/springMVC_app_war_exploded/students/1
+
 
 ### Find all students
-GET http://localhost:8082/log_app_war_exploded/students
+GET http://localhost:8089/springMVC_app_war_exploded/students

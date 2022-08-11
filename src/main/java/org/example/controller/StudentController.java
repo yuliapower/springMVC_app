@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "/students")
 public class StudentController {
     private final StudentService studentService;
     
@@ -16,17 +17,17 @@ public class StudentController {
         this.studentService = studentService;
     }
     
-    @PostMapping(value = "/students")
+    @PostMapping
     public void add(@RequestBody Student student) {
         studentService.save(student);
     }
     
-    @DeleteMapping(value = "/students/{studentId}")
+    @DeleteMapping(value = "/{studentId}")
     public void deleteById(@PathVariable Long studentId) {
         studentService.deleteById(studentId);
     }
 
-    @GetMapping("/students")
+    @GetMapping
     public List<Student> findAll(){
         return studentService.findAll();
     }
